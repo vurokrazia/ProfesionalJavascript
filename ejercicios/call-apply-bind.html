@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicios</title>
+</head>
+
+<body>
+  <a href="index.html">Go back!</a>
+  <h1><em>this</em></h1>
+  <ul>
+    <li><button class="call-to-action"> action </button> </li>
+    <li><button class="call-to-action"> action </button> </li>
+    <li><button class="call-to-action"> action </button> </li>
+  </ul>
+  <script>
+    function saludar() {
+      console.log('tag', this.name, this.last_name)
+    }
+    const jesus = {
+      name: "Jesús",
+      last_name: "Martínez"
+    }
+    saludar.call(jesus)
+
+    function walk(mts, dir) {
+      console.log(`${this.name} ${mts} ${dir}`);
+    }
+    walk.call(jesus, 400, "iqz");
+
+    walk.apply(jesus, [400, "Der"])
+
+    const alberto = {
+      ...jesus,
+      name: "Alberto"
+    }
+    const saludar_alb = saludar.bind(alberto);
+    saludar_alb()
+    const walk_alb = walk.bind(alberto)
+    walk_alb(666, "Norte")
+    const buttons = document.getElementsByClassName("call-to-action");
+    // buttons.forEach(button => {
+    //   button.onClick = () => alert("N o p e");
+    // });
+    Array.prototype.forEach.call(
+      buttons, button => {
+        button.onclick = () => alert("N o p e");
+      }
+    )
+  </script>
+</body>
+
+</html>

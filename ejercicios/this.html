@@ -10,11 +10,15 @@
 
 <body>
   <a href="index.html">Go back!</a>
-  <p><em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati odit commodi dolorem, corrupti sit molestiae
-      cupiditate eum ullam accusantium, facilis vitae vel? Molestias, consectetur repellendus. Neque nesciunt ipsum
-      perspiciatis id!</em></p>
+  <h1><em>this</em></h1>
   <script>
-    var message = "Hello"
+    // console.log(`this ${this}`);
+    "use strict";
+
+    function whoIsThisStrict(params) {
+      return this
+    }
+    console.log(`whoIsThisStrict ${whoIsThisStrict(this)}`);
   </script>
 </body>
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicios</title>
+</head>
+
+<body>
+  <a href="index.html">Go back!</a>
+  <h1><em>this</em></h1>
+  <ul>
+    <li><button class="call-to-action"> action </button> </li>
+    <li><button class="call-to-action"> action </button> </li>
+    <li><button class="call-to-action"> action </button> </li>
+  </ul>
+  <script>
+    // const zelda = {
+    //   name: "Zelda"
+    // }
+    // zelda.saludar = function () {
+    //   console.log('tag', this.name)
+    // }
+    // zelda.saludar();
+    // const link = {
+    //   name: "Link"
+    // }
+    // link.saludar = function () {
+    //   console.log('tag', this.name)
+    // }
+    // link.saludar();
+    // function Hero(name) {
+    //   const hero = {
+    //     name: name
+    //   }
+    //   hero.saludar = function () {
+    //     console.log('tag', this.name)
+    //   }
+    //   return hero
+    // }
+    // const zelda = Hero("Zelda");
+    // zelda.saludar();
+    // const link = Hero("Link");
+    // link.saludar();
+
+    // const HeroMethods = {
+    //   saludar: function () {
+    //     console.log('tag', this.name)
+    //   }
+    // }
+
+    // function Hero(name) {
+    //   const hero = {
+    //     name: name
+    //   }
+    //   hero.saludar = HeroMethods.saludar
+    //   return hero
+    // }
+    // const zelda = Hero("Zelda");
+    // zelda.saludar();
+    // const link = Hero("Link");
+    // link.saludar();
+
+    const HeroMethods = {
+      saludar: function () {
+        console.log('tag:::', this.name)
+      }
+    }
+
+    function Hero(name) {
+      const hero = {
+        name: name
+      }
+      hero.saludar = HeroMethods.saludar
+      return hero
+    }
+    const zelda = Hero("Zelda");
+    zelda.saludar();
+    const link = Hero("Link");
+    link.saludar();
+  </script>
+</body>
+
+</html>
